@@ -1,0 +1,1109 @@
+﻿cargo :        Fresh 
+unicode-ident v1.0.22
+At line:1 char:1
++ cargo build 
+--release -v > 
+build_error.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (       Fresh    
+ unicode-ident v1.0    
+.22:String) [], Re    
+moteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+       Fresh 
+pin-project-lite 
+v0.2.16
+       Fresh bytes 
+v1.11.0
+       Fresh itoa 
+v1.0.17
+       Fresh 
+windows-link v0.2.1
+       Fresh 
+futures-core v0.3.31
+       Fresh smallvec 
+v1.15.1
+       Fresh 
+scopeguard v1.2.0
+       Fresh cfg-if 
+v1.0.4
+       Fresh once_cell 
+v1.21.3
+       Fresh log 
+v0.4.29
+       Fresh pin-utils 
+v0.1.0
+       Fresh 
+tower-service v0.3.3
+       Fresh 
+proc-macro2 v1.0.105
+   Compiling 
+windows-sys v0.61.2
+       Fresh lock_api 
+v0.4.14
+       Fresh http 
+v1.4.0
+       Fresh 
+tracing-core v0.1.36
+       Fresh autocfg 
+v1.5.0
+       Fresh mime 
+v0.3.17
+       Fresh 
+cfg_aliases v0.2.1
+       Fresh 
+percent-encoding v2.3.2
+       Fresh 
+tower-layer v0.3.3
+       Fresh 
+futures-task v0.3.31
+     Running `rustc 
+--crate-name 
+windows_sys 
+--edition=2021 C:\Users
+\Joey\.cargo\registry\s
+rc\index.crates.io-1949
+cf8c6b5b557f\windows-sy
+s-0.61.2\src\lib.rs 
+--error-format=json --j
+son=diagnostic-rendered
+-ansi,artifacts,future-
+incompat --crate-type 
+lib --emit=dep-info,met
+adata,link -C 
+opt-level=3 -C 
+embed-bitcode=no 
+--warn=unexpected_cfgs 
+--warn=missing_unsafe_o
+n_extern --check-cfg "c
+fg(windows_raw_dylib, 
+windows_slim_errors)" 
+--cfg 
+"feature=\"Wdk\"" 
+--cfg "feature=\"Wdk_Fo
+undation\"" --cfg "feat
+ure=\"Wdk_Storage\"" 
+--cfg "feature=\"Wdk_St
+orage_FileSystem\"" 
+--cfg "feature=\"Wdk_Sy
+stem\"" --cfg "feature=
+\"Wdk_System_IO\"" 
+--cfg 
+"feature=\"Win32\"" 
+--cfg "feature=\"Win32_
+Foundation\"" --cfg "fe
+ature=\"Win32_Networkin
+g\"" --cfg "feature=\"W
+in32_Networking_WinSock
+\"" --cfg "feature=\"Wi
+n32_Security\"" --cfg "
+feature=\"Win32_Storage
+\"" --cfg "feature=\"Wi
+n32_Storage_FileSystem\
+"" --cfg "feature=\"Win
+32_System\"" --cfg "fea
+ture=\"Win32_System_Con
+sole\"" --cfg "feature=
+\"Win32_System_IO\"" 
+--cfg "feature=\"Win32_
+System_Pipes\"" --cfg "
+feature=\"Win32_System_
+SystemServices\"" 
+--cfg "feature=\"Win32_
+System_Threading\"" 
+--cfg "feature=\"Win32_
+System_WindowsProgrammi
+ng\"" --cfg 
+"feature=\"default\"" 
+--check-cfg 
+cfg(docsrs,test) 
+--check-cfg 
+"cfg(feature, 
+values(\"Wdk\", 
+\"Wdk_Devices\", \"Wdk_
+Devices_Bluetooth\", \"
+Wdk_Devices_HumanInterf
+aceDevice\", 
+\"Wdk_Foundation\", 
+\"Wdk_Graphics\", \"Wdk
+_Graphics_Direct3D\", \
+"Wdk_NetworkManagement\
+", \"Wdk_NetworkManagem
+ent_Ndis\", \"Wdk_Netwo
+rkManagement_WindowsFil
+teringPlatform\", 
+\"Wdk_Storage\", \"Wdk_
+Storage_FileSystem\", \
+"Wdk_Storage_FileSystem
+_Minifilters\", 
+\"Wdk_System\", 
+\"Wdk_System_IO\", 
+\"Wdk_System_Memory\", 
+\"Wdk_System_OfflineReg
+istry\", \"Wdk_System_R
+egistry\", \"Wdk_System
+_SystemInformation\", \
+"Wdk_System_SystemServi
+ces\", \"Wdk_System_Thr
+eading\", \"Win32\", 
+\"Win32_Data\", \"Win32
+_Data_HtmlHelp\", \"Win
+32_Data_RightsManagemen
+t\", 
+\"Win32_Devices\", \"Wi
+n32_Devices_AllJoyn\", 
+\"Win32_Devices_Beep\",
+ \"Win32_Devices_Biomet
+ricFramework\", \"Win32
+_Devices_Bluetooth\", \
+"Win32_Devices_Cdrom\",
+ \"Win32_Devices_Commun
+ication\", \"Win32_Devi
+ces_DeviceAndDriverInst
+allation\", \"Win32_Dev
+ices_DeviceQuery\", \"W
+in32_Devices_Display\",
+ 
+\"Win32_Devices_Dvd\", 
+\"Win32_Devices_Enumera
+tion\", \"Win32_Devices
+_Enumeration_Pnp\", 
+\"Win32_Devices_Fax\", 
+\"Win32_Devices_HumanIn
+terfaceDevice\", 
+\"Win32_Devices_Nfc\", 
+\"Win32_Devices_Nfp\", 
+\"Win32_Devices_Portabl
+eDevices\", \"Win32_Dev
+ices_Properties\", 
+\"Win32_Devices_Pwm\", 
+\"Win32_Devices_Sensors
+\", \"Win32_Devices_Ser
+ialCommunication\", \"W
+in32_Devices_Tapi\", 
+\"Win32_Devices_Usb\", 
+\"Win32_Devices_WebServ
+icesOnDevices\", 
+\"Win32_Foundation\", 
+\"Win32_Gaming\", \"Win
+32_Globalization\", 
+\"Win32_Graphics\", \"W
+in32_Graphics_Dwm\", \"
+Win32_Graphics_Gdi\", \
+"Win32_Graphics_GdiPlus
+\", \"Win32_Graphics_Hl
+sl\", \"Win32_Graphics_
+OpenGL\", \"Win32_Graph
+ics_Printing\", \"Win32
+_Graphics_Printing_Prin
+tTicket\", 
+\"Win32_Management\", \
+"Win32_Management_Mobil
+eDeviceManagementRegist
+ration\", 
+\"Win32_Media\", 
+\"Win32_Media_Audio\", 
+\"Win32_Media_DxMediaOb
+jects\", \"Win32_Media_
+KernelStreaming\", \"Wi
+n32_Media_Multimedia\",
+ \"Win32_Media_Streamin
+g\", \"Win32_Media_Wind
+owsMediaFormat\", \"Win
+32_NetworkManagement\",
+ \"Win32_NetworkManagem
+ent_Dhcp\", \"Win32_Net
+workManagement_Dns\", \
+"Win32_NetworkManagemen
+t_InternetConnectionWiz
+ard\", \"Win32_NetworkM
+anagement_IpHelper\", \
+"Win32_NetworkManagemen
+t_Multicast\", \"Win32_
+NetworkManagement_Ndis\
+", \"Win32_NetworkManag
+ement_NetBios\", \"Win3
+2_NetworkManagement_Net
+Management\", \"Win32_N
+etworkManagement_NetShe
+ll\", \"Win32_NetworkMa
+nagement_NetworkDiagnos
+ticsFramework\", \"Win3
+2_NetworkManagement_P2P
+\", \"Win32_NetworkMana
+gement_QoS\", \"Win32_N
+etworkManagement_Rras\"
+, \"Win32_NetworkManage
+ment_Snmp\", \"Win32_Ne
+tworkManagement_WNet\",
+ \"Win32_NetworkManagem
+ent_WebDav\", \"Win32_N
+etworkManagement_WiFi\"
+, \"Win32_NetworkManage
+ment_WindowsConnectionM
+anager\", \"Win32_Netwo
+rkManagement_WindowsFil
+teringPlatform\", \"Win
+32_NetworkManagement_Wi
+ndowsFirewall\", \"Win3
+2_NetworkManagement_Win
+dowsNetworkVirtualizati
+on\", 
+\"Win32_Networking\", \
+"Win32_Networking_Activ
+eDirectory\", \"Win32_N
+etworking_Clustering\",
+ \"Win32_Networking_Htt
+pServer\", \"Win32_Netw
+orking_Ldap\", \"Win32_
+Networking_WebSocket\",
+ \"Win32_Networking_Win
+Http\", \"Win32_Network
+ing_WinInet\", \"Win32_
+Networking_WinSock\", \
+"Win32_Networking_Windo
+wsWebServices\", 
+\"Win32_Security\", \"W
+in32_Security_AppLocker
+\", \"Win32_Security_Au
+thentication\", \"Win32
+_Security_Authenticatio
+n_Identity\", \"Win32_S
+ecurity_Authorization\"
+, \"Win32_Security_Cred
+entials\", \"Win32_Secu
+rity_Cryptography\", \"
+Win32_Security_Cryptogr
+aphy_Catalog\", \"Win32
+_Security_Cryptography_
+Certificates\", \"Win32
+_Security_Cryptography_
+Sip\", \"Win32_Security
+_Cryptography_UI\", \"W
+in32_Security_Diagnosti
+cDataQuery\", \"Win32_S
+ecurity_DirectoryServic
+es\", \"Win32_Security_
+EnterpriseData\", \"Win
+32_Security_ExtensibleA
+uthenticationProtocol\"
+, \"Win32_Security_Isol
+ation\", \"Win32_Securi
+ty_LicenseProtection\",
+ \"Win32_Security_Netwo
+rkAccessProtection\", \
+"Win32_Security_WinTrus
+t\", \"Win32_Security_W
+inWlx\", 
+\"Win32_Storage\", \"Wi
+n32_Storage_Cabinets\",
+ \"Win32_Storage_CloudF
+ilters\", \"Win32_Stora
+ge_Compression\", \"Win
+32_Storage_DistributedF
+ileSystem\", \"Win32_St
+orage_FileHistory\", \"
+Win32_Storage_FileSyste
+m\", \"Win32_Storage_Im
+api\", \"Win32_Storage_
+IndexServer\", \"Win32_
+Storage_InstallableFile
+Systems\", \"Win32_Stor
+age_IscsiDisc\", 
+\"Win32_Storage_Jet\", 
+\"Win32_Storage_Nvme\",
+ \"Win32_Storage_Offlin
+eFiles\", \"Win32_Stora
+ge_OperationRecorder\",
+ \"Win32_Storage_Packag
+ing\", \"Win32_Storage_
+Packaging_Appx\", \"Win
+32_Storage_ProjectedFil
+eSystem\", \"Win32_Stor
+age_StructuredStorage\"
+, 
+\"Win32_Storage_Vhd\", 
+\"Win32_Storage_Xps\", 
+\"Win32_System\", \"Win
+32_System_AddressBook\"
+, \"Win32_System_Antima
+lware\", \"Win32_System
+_ApplicationInstallatio
+nAndServicing\", \"Win3
+2_System_ApplicationVer
+ifier\", \"Win32_System
+_ClrHosting\", 
+\"Win32_System_Com\", \
+"Win32_System_Com_Marsh
+al\", \"Win32_System_Co
+m_StructuredStorage\", 
+\"Win32_System_Com_Urlm
+on\", \"Win32_System_Co
+mponentServices\", \"Wi
+n32_System_Console\", \
+"Win32_System_Correlati
+onVector\", \"Win32_Sys
+tem_DataExchange\", \"W
+in32_System_DeploymentS
+ervices\", \"Win32_Syst
+em_DeveloperLicensing\"
+, \"Win32_System_Diagno
+stics\", \"Win32_System
+_Diagnostics_Ceip\", \"
+Win32_System_Diagnostic
+s_Debug\", \"Win32_Syst
+em_Diagnostics_Debug_Ex
+tensions\", \"Win32_Sys
+tem_Diagnostics_Etw\", 
+\"Win32_System_Diagnost
+ics_ProcessSnapshotting
+\", \"Win32_System_Diag
+nostics_ToolHelp\", \"W
+in32_System_Diagnostics
+_TraceLogging\", \"Win3
+2_System_DistributedTra
+nsactionCoordinator\", 
+\"Win32_System_Environm
+ent\", \"Win32_System_E
+rrorReporting\", \"Win3
+2_System_EventCollector
+\", \"Win32_System_Even
+tLog\", \"Win32_System_
+EventNotificationServic
+e\", \"Win32_System_Gro
+upPolicy\", \"Win32_Sys
+tem_HostCompute\", \"Wi
+n32_System_HostComputeN
+etwork\", \"Win32_Syste
+m_HostComputeSystem\", 
+\"Win32_System_Hypervis
+or\", 
+\"Win32_System_IO\", 
+\"Win32_System_Iis\", \
+"Win32_System_Ioctl\", 
+\"Win32_System_JobObjec
+ts\", 
+\"Win32_System_Js\", \"
+Win32_System_Kernel\", 
+\"Win32_System_LibraryL
+oader\", \"Win32_System
+_Mailslots\", 
+\"Win32_System_Mapi\", 
+\"Win32_System_Memory\"
+, \"Win32_System_Memory
+_NonVolatile\", \"Win32
+_System_MessageQueuing\
+", \"Win32_System_Mixed
+Reality\", 
+\"Win32_System_Ole\", \
+"Win32_System_PasswordM
+anagement\", \"Win32_Sy
+stem_Performance\", \"W
+in32_System_Performance
+_HardwareCounterProfili
+ng\", \"Win32_System_Pi
+pes\", \"Win32_System_P
+ower\", \"Win32_System_
+ProcessStatus\", \"Win3
+2_System_Recovery\", \"
+Win32_System_Registry\"
+, \"Win32_System_Remote
+Desktop\", \"Win32_Syst
+em_RemoteManagement\", 
+\"Win32_System_RestartM
+anager\", \"Win32_Syste
+m_Restore\", 
+\"Win32_System_Rpc\", \
+"Win32_System_Search\",
+ \"Win32_System_Search_
+Common\", \"Win32_Syste
+m_SecurityCenter\", \"W
+in32_System_Services\",
+ \"Win32_System_SetupAn
+dMigration\", \"Win32_S
+ystem_Shutdown\", \"Win
+32_System_StationsAndDe
+sktops\", \"Win32_Syste
+m_SubsystemForLinux\", 
+\"Win32_System_SystemIn
+formation\", \"Win32_Sy
+stem_SystemServices\", 
+\"Win32_System_Threadin
+g\", 
+\"Win32_System_Time\", 
+\"Win32_System_TpmBaseS
+ervices\", \"Win32_Syst
+em_UserAccessLogging\",
+ \"Win32_System_Variant
+\", \"Win32_System_Virt
+ualDosMachines\", \"Win
+32_System_WindowsProgra
+mming\", 
+\"Win32_System_Wmi\", 
+\"Win32_UI\", \"Win32_U
+I_Accessibility\", \"Wi
+n32_UI_ColorSystem\", 
+\"Win32_UI_Controls\", 
+\"Win32_UI_Controls_Dia
+logs\", 
+\"Win32_UI_HiDpi\", 
+\"Win32_UI_Input\", \"W
+in32_UI_Input_Ime\", \"
+Win32_UI_Input_Keyboard
+AndMouse\", \"Win32_UI_
+Input_Pointer\", \"Win3
+2_UI_Input_Touch\", \"W
+in32_UI_Input_XboxContr
+oller\", \"Win32_UI_Int
+eractionContext\", \"Wi
+n32_UI_Magnification\",
+ \"Win32_UI_Shell\", \"
+Win32_UI_Shell_Common\"
+, \"Win32_UI_Shell_Prop
+ertiesSystem\", 
+\"Win32_UI_TabletPC\", 
+\"Win32_UI_TextServices
+\", \"Win32_UI_WindowsA
+ndMessaging\", 
+\"Win32_Web\", \"Win32_
+Web_InternetExplorer\",
+ \"default\", 
+\"docs\"))" -C metadata
+=a0fc23bb9f818963 -C ex
+tra-filename=-31ccd588d
+68cb00c --out-dir "C:\U
+sers\Joey\Desktop\Rust 
+apps\letsbuildadatabase
+\database2\target\relea
+se\deps" -C 
+strip=debuginfo -L "dep
+endency=C:\Users\Joey\D
+esktop\Rust apps\letsbu
+ildadatabase\database2\
+target\release\deps" 
+--extern "windows_link=
+C:\Users\Joey\Desktop\R
+ust apps\letsbuildadata
+base\database2\target\r
+elease\deps\libwindows_
+link-4fefee8a36169f3f.r
+meta" --cap-lints 
+allow`
+       Fresh quote 
+v1.0.43
+       Fresh 
+windows_x86_64_gnu 
+v0.53.1
+       Fresh 
+parking_lot_core 
+v0.9.12
+       Fresh tracing 
+v0.1.44
+       Fresh http-body 
+v1.0.1
+       Fresh 
+serde_core v1.0.228
+       Fresh 
+windows_x86_64_gnu 
+v0.52.6
+       Fresh httpdate 
+v1.0.3
+       Fresh 
+futures-util v0.3.31
+       Fresh httparse 
+v1.10.1
+       Fresh 
+futures-channel v0.3.31
+       Fresh 
+atomic-waker v1.1.2
+       Fresh syn 
+v2.0.114
+       Fresh 
+windows-targets v0.53.5
+       Fresh 
+parking_lot v0.12.5
+       Fresh 
+http-body-util v0.1.3
+       Fresh 
+windows-targets v0.52.6
+       Fresh 
+sync_wrapper v1.0.2
+       Fresh bitflags 
+v2.10.0
+       Fresh zmij 
+v1.0.14
+       Fresh 
+form_urlencoded v1.2.2
+       Fresh 
+cursor-icon v1.2.0
+       Fresh smol_str 
+v0.2.2
+       Fresh 
+raw-window-handle 
+v0.6.2
+       Fresh 
+unicode-segmentation 
+v1.12.0
+       Fresh 
+windows-sys v0.60.2
+       Fresh 
+tokio-macros v2.6.0
+       Fresh 
+serde_derive v1.0.228
+       Fresh 
+num-traits v0.2.19
+       Fresh 
+thiserror-impl v2.0.17
+       Fresh 
+windows-sys v0.52.0
+       Fresh dpi v0.1.2
+       Fresh ryu 
+v1.0.22
+       Fresh unicase 
+v2.9.0
+       Fresh memchr 
+v2.7.6
+       Fresh 
+futures-sink v0.3.31
+       Fresh axum-core 
+v0.5.6
+       Fresh 
+serde_path_to_error 
+v0.1.20
+       Fresh 
+widestring v1.2.1
+       Fresh matchit 
+v0.8.4
+       Fresh 
+http-range-header 
+v0.4.2
+       Fresh socket2 
+v0.6.1
+       Fresh serde 
+v1.0.228
+       Fresh 
+mime_guess v2.0.5
+       Fresh atoi 
+v2.0.0
+       Fresh odbc-sys 
+v0.27.4
+       Fresh winit 
+v0.30.12
+       Fresh 
+serde_json v1.0.149
+       Fresh thiserror 
+v2.0.17
+       Fresh 
+serde_urlencoded v0.7.1
+       Fresh odbc-api 
+v20.1.0
+       Dirty mio 
+v1.1.1: the dependency 
+windows_sys was rebuilt
+   Compiling mio v1.1.1
+     Running `rustc 
+--crate-name mio 
+--edition=2021 C:\Users
+\Joey\.cargo\registry\s
+rc\index.crates.io-1949
+cf8c6b5b557f\mio-1.1.1\
+src\lib.rs 
+--error-format=json --j
+son=diagnostic-rendered
+-ansi,artifacts,future-
+incompat --crate-type 
+lib --emit=dep-info,met
+adata,link -C 
+opt-level=3 -C 
+embed-bitcode=no 
+--warn=unexpected_cfgs 
+--check-cfg cfg(mio_uns
+upported_force_poll_pol
+l) --check-cfg cfg(mio_
+unsupported_force_waker
+_pipe) --cfg 
+"feature=\"net\"" 
+--cfg 
+"feature=\"os-ext\"" 
+--cfg 
+"feature=\"os-poll\"" 
+--check-cfg 
+cfg(docsrs,test) 
+--check-cfg 
+"cfg(feature, 
+values(\"default\", 
+\"log\", \"net\", 
+\"os-ext\", 
+\"os-poll\"))" -C metad
+ata=daca073ecf45944d 
+-C extra-filename=-4f76
+9441ce8984c8 --out-dir 
+"C:\Users\Joey\Desktop\
+Rust apps\letsbuildadat
+abase\database2\target\
+release\deps" -C 
+strip=debuginfo -L "dep
+endency=C:\Users\Joey\D
+esktop\Rust apps\letsbu
+ildadatabase\database2\
+target\release\deps" 
+--extern "windows_sys=C
+:\Users\Joey\Desktop\Ru
+st apps\letsbuildadatab
+ase\database2\target\re
+lease\deps\libwindows_s
+ys-31ccd588d68cb00c.rme
+ta" --cap-lints allow`
+error: error calling 
+dlltool 'dlltool.exe': 
+program not found
+
+error: could not 
+compile `windows-sys` 
+(lib) due to 1 
+previous error
+
+Caused by:
+  process didn't exit 
+successfully: `rustc 
+--crate-name 
+windows_sys 
+--edition=2021 C:\Users
+\Joey\.cargo\registry\s
+rc\index.crates.io-1949
+cf8c6b5b557f\windows-sy
+s-0.61.2\src\lib.rs 
+--error-format=json --j
+son=diagnostic-rendered
+-ansi,artifacts,future-
+incompat --crate-type 
+lib --emit=dep-info,met
+adata,link -C 
+opt-level=3 -C 
+embed-bitcode=no 
+--warn=unexpected_cfgs 
+--warn=missing_unsafe_o
+n_extern --check-cfg "c
+fg(windows_raw_dylib, 
+windows_slim_errors)" 
+--cfg 
+"feature=\"Wdk\"" 
+--cfg "feature=\"Wdk_Fo
+undation\"" --cfg "feat
+ure=\"Wdk_Storage\"" 
+--cfg "feature=\"Wdk_St
+orage_FileSystem\"" 
+--cfg "feature=\"Wdk_Sy
+stem\"" --cfg "feature=
+\"Wdk_System_IO\"" 
+--cfg 
+"feature=\"Win32\"" 
+--cfg "feature=\"Win32_
+Foundation\"" --cfg "fe
+ature=\"Win32_Networkin
+g\"" --cfg "feature=\"W
+in32_Networking_WinSock
+\"" --cfg "feature=\"Wi
+n32_Security\"" --cfg "
+feature=\"Win32_Storage
+\"" --cfg "feature=\"Wi
+n32_Storage_FileSystem\
+"" --cfg "feature=\"Win
+32_System\"" --cfg "fea
+ture=\"Win32_System_Con
+sole\"" --cfg "feature=
+\"Win32_System_IO\"" 
+--cfg "feature=\"Win32_
+System_Pipes\"" --cfg "
+feature=\"Win32_System_
+SystemServices\"" 
+--cfg "feature=\"Win32_
+System_Threading\"" 
+--cfg "feature=\"Win32_
+System_WindowsProgrammi
+ng\"" --cfg 
+"feature=\"default\"" 
+--check-cfg 
+cfg(docsrs,test) 
+--check-cfg 
+"cfg(feature, 
+values(\"Wdk\", 
+\"Wdk_Devices\", \"Wdk_
+Devices_Bluetooth\", \"
+Wdk_Devices_HumanInterf
+aceDevice\", 
+\"Wdk_Foundation\", 
+\"Wdk_Graphics\", \"Wdk
+_Graphics_Direct3D\", \
+"Wdk_NetworkManagement\
+", \"Wdk_NetworkManagem
+ent_Ndis\", \"Wdk_Netwo
+rkManagement_WindowsFil
+teringPlatform\", 
+\"Wdk_Storage\", \"Wdk_
+Storage_FileSystem\", \
+"Wdk_Storage_FileSystem
+_Minifilters\", 
+\"Wdk_System\", 
+\"Wdk_System_IO\", 
+\"Wdk_System_Memory\", 
+\"Wdk_System_OfflineReg
+istry\", \"Wdk_System_R
+egistry\", \"Wdk_System
+_SystemInformation\", \
+"Wdk_System_SystemServi
+ces\", \"Wdk_System_Thr
+eading\", \"Win32\", 
+\"Win32_Data\", \"Win32
+_Data_HtmlHelp\", \"Win
+32_Data_RightsManagemen
+t\", 
+\"Win32_Devices\", \"Wi
+n32_Devices_AllJoyn\", 
+\"Win32_Devices_Beep\",
+ \"Win32_Devices_Biomet
+ricFramework\", \"Win32
+_Devices_Bluetooth\", \
+"Win32_Devices_Cdrom\",
+ \"Win32_Devices_Commun
+ication\", \"Win32_Devi
+ces_DeviceAndDriverInst
+allation\", \"Win32_Dev
+ices_DeviceQuery\", \"W
+in32_Devices_Display\",
+ 
+\"Win32_Devices_Dvd\", 
+\"Win32_Devices_Enumera
+tion\", \"Win32_Devices
+_Enumeration_Pnp\", 
+\"Win32_Devices_Fax\", 
+\"Win32_Devices_HumanIn
+terfaceDevice\", 
+\"Win32_Devices_Nfc\", 
+\"Win32_Devices_Nfp\", 
+\"Win32_Devices_Portabl
+eDevices\", \"Win32_Dev
+ices_Properties\", 
+\"Win32_Devices_Pwm\", 
+\"Win32_Devices_Sensors
+\", \"Win32_Devices_Ser
+ialCommunication\", \"W
+in32_Devices_Tapi\", 
+\"Win32_Devices_Usb\", 
+\"Win32_Devices_WebServ
+icesOnDevices\", 
+\"Win32_Foundation\", 
+\"Win32_Gaming\", \"Win
+32_Globalization\", 
+\"Win32_Graphics\", \"W
+in32_Graphics_Dwm\", \"
+Win32_Graphics_Gdi\", \
+"Win32_Graphics_GdiPlus
+\", \"Win32_Graphics_Hl
+sl\", \"Win32_Graphics_
+OpenGL\", \"Win32_Graph
+ics_Printing\", \"Win32
+_Graphics_Printing_Prin
+tTicket\", 
+\"Win32_Management\", \
+"Win32_Management_Mobil
+eDeviceManagementRegist
+ration\", 
+\"Win32_Media\", 
+\"Win32_Media_Audio\", 
+\"Win32_Media_DxMediaOb
+jects\", \"Win32_Media_
+KernelStreaming\", \"Wi
+n32_Media_Multimedia\",
+ \"Win32_Media_Streamin
+g\", \"Win32_Media_Wind
+owsMediaFormat\", \"Win
+32_NetworkManagement\",
+ \"Win32_NetworkManagem
+ent_Dhcp\", \"Win32_Net
+workManagement_Dns\", \
+"Win32_NetworkManagemen
+t_InternetConnectionWiz
+ard\", \"Win32_NetworkM
+anagement_IpHelper\", \
+"Win32_NetworkManagemen
+t_Multicast\", \"Win32_
+NetworkManagement_Ndis\
+", \"Win32_NetworkManag
+ement_NetBios\", \"Win3
+2_NetworkManagement_Net
+Management\", \"Win32_N
+etworkManagement_NetShe
+ll\", \"Win32_NetworkMa
+nagement_NetworkDiagnos
+ticsFramework\", \"Win3
+2_NetworkManagement_P2P
+\", \"Win32_NetworkMana
+gement_QoS\", \"Win32_N
+etworkManagement_Rras\"
+, \"Win32_NetworkManage
+ment_Snmp\", \"Win32_Ne
+tworkManagement_WNet\",
+ \"Win32_NetworkManagem
+ent_WebDav\", \"Win32_N
+etworkManagement_WiFi\"
+, \"Win32_NetworkManage
+ment_WindowsConnectionM
+anager\", \"Win32_Netwo
+rkManagement_WindowsFil
+teringPlatform\", \"Win
+32_NetworkManagement_Wi
+ndowsFirewall\", \"Win3
+2_NetworkManagement_Win
+dowsNetworkVirtualizati
+on\", 
+\"Win32_Networking\", \
+"Win32_Networking_Activ
+eDirectory\", \"Win32_N
+etworking_Clustering\",
+ \"Win32_Networking_Htt
+pServer\", \"Win32_Netw
+orking_Ldap\", \"Win32_
+Networking_WebSocket\",
+ \"Win32_Networking_Win
+Http\", \"Win32_Network
+ing_WinInet\", \"Win32_
+Networking_WinSock\", \
+"Win32_Networking_Windo
+wsWebServices\", 
+\"Win32_Security\", \"W
+in32_Security_AppLocker
+\", \"Win32_Security_Au
+thentication\", \"Win32
+_Security_Authenticatio
+n_Identity\", \"Win32_S
+ecurity_Authorization\"
+, \"Win32_Security_Cred
+entials\", \"Win32_Secu
+rity_Cryptography\", \"
+Win32_Security_Cryptogr
+aphy_Catalog\", \"Win32
+_Security_Cryptography_
+Certificates\", \"Win32
+_Security_Cryptography_
+Sip\", \"Win32_Security
+_Cryptography_UI\", \"W
+in32_Security_Diagnosti
+cDataQuery\", \"Win32_S
+ecurity_DirectoryServic
+es\", \"Win32_Security_
+EnterpriseData\", \"Win
+32_Security_ExtensibleA
+uthenticationProtocol\"
+, \"Win32_Security_Isol
+ation\", \"Win32_Securi
+ty_LicenseProtection\",
+ \"Win32_Security_Netwo
+rkAccessProtection\", \
+"Win32_Security_WinTrus
+t\", \"Win32_Security_W
+inWlx\", 
+\"Win32_Storage\", \"Wi
+n32_Storage_Cabinets\",
+ \"Win32_Storage_CloudF
+ilters\", \"Win32_Stora
+ge_Compression\", \"Win
+32_Storage_DistributedF
+ileSystem\", \"Win32_St
+orage_FileHistory\", \"
+Win32_Storage_FileSyste
+m\", \"Win32_Storage_Im
+api\", \"Win32_Storage_
+IndexServer\", \"Win32_
+Storage_InstallableFile
+Systems\", \"Win32_Stor
+age_IscsiDisc\", 
+\"Win32_Storage_Jet\", 
+\"Win32_Storage_Nvme\",
+ \"Win32_Storage_Offlin
+eFiles\", \"Win32_Stora
+ge_OperationRecorder\",
+ \"Win32_Storage_Packag
+ing\", \"Win32_Storage_
+Packaging_Appx\", \"Win
+32_Storage_ProjectedFil
+eSystem\", \"Win32_Stor
+age_StructuredStorage\"
+, 
+\"Win32_Storage_Vhd\", 
+\"Win32_Storage_Xps\", 
+\"Win32_System\", \"Win
+32_System_AddressBook\"
+, \"Win32_System_Antima
+lware\", \"Win32_System
+_ApplicationInstallatio
+nAndServicing\", \"Win3
+2_System_ApplicationVer
+ifier\", \"Win32_System
+_ClrHosting\", 
+\"Win32_System_Com\", \
+"Win32_System_Com_Marsh
+al\", \"Win32_System_Co
+m_StructuredStorage\", 
+\"Win32_System_Com_Urlm
+on\", \"Win32_System_Co
+mponentServices\", \"Wi
+n32_System_Console\", \
+"Win32_System_Correlati
+onVector\", \"Win32_Sys
+tem_DataExchange\", \"W
+in32_System_DeploymentS
+ervices\", \"Win32_Syst
+em_DeveloperLicensing\"
+, \"Win32_System_Diagno
+stics\", \"Win32_System
+_Diagnostics_Ceip\", \"
+Win32_System_Diagnostic
+s_Debug\", \"Win32_Syst
+em_Diagnostics_Debug_Ex
+tensions\", \"Win32_Sys
+tem_Diagnostics_Etw\", 
+\"Win32_System_Diagnost
+ics_ProcessSnapshotting
+\", \"Win32_System_Diag
+nostics_ToolHelp\", \"W
+in32_System_Diagnostics
+_TraceLogging\", \"Win3
+2_System_DistributedTra
+nsactionCoordinator\", 
+\"Win32_System_Environm
+ent\", \"Win32_System_E
+rrorReporting\", \"Win3
+2_System_EventCollector
+\", \"Win32_System_Even
+tLog\", \"Win32_System_
+EventNotificationServic
+e\", \"Win32_System_Gro
+upPolicy\", \"Win32_Sys
+tem_HostCompute\", \"Wi
+n32_System_HostComputeN
+etwork\", \"Win32_Syste
+m_HostComputeSystem\", 
+\"Win32_System_Hypervis
+or\", 
+\"Win32_System_IO\", 
+\"Win32_System_Iis\", \
+"Win32_System_Ioctl\", 
+\"Win32_System_JobObjec
+ts\", 
+\"Win32_System_Js\", \"
+Win32_System_Kernel\", 
+\"Win32_System_LibraryL
+oader\", \"Win32_System
+_Mailslots\", 
+\"Win32_System_Mapi\", 
+\"Win32_System_Memory\"
+, \"Win32_System_Memory
+_NonVolatile\", \"Win32
+_System_MessageQueuing\
+", \"Win32_System_Mixed
+Reality\", 
+\"Win32_System_Ole\", \
+"Win32_System_PasswordM
+anagement\", \"Win32_Sy
+stem_Performance\", \"W
+in32_System_Performance
+_HardwareCounterProfili
+ng\", \"Win32_System_Pi
+pes\", \"Win32_System_P
+ower\", \"Win32_System_
+ProcessStatus\", \"Win3
+2_System_Recovery\", \"
+Win32_System_Registry\"
+, \"Win32_System_Remote
+Desktop\", \"Win32_Syst
+em_RemoteManagement\", 
+\"Win32_System_RestartM
+anager\", \"Win32_Syste
+m_Restore\", 
+\"Win32_System_Rpc\", \
+"Win32_System_Search\",
+ \"Win32_System_Search_
+Common\", \"Win32_Syste
+m_SecurityCenter\", \"W
+in32_System_Services\",
+ \"Win32_System_SetupAn
+dMigration\", \"Win32_S
+ystem_Shutdown\", \"Win
+32_System_StationsAndDe
+sktops\", \"Win32_Syste
+m_SubsystemForLinux\", 
+\"Win32_System_SystemIn
+formation\", \"Win32_Sy
+stem_SystemServices\", 
+\"Win32_System_Threadin
+g\", 
+\"Win32_System_Time\", 
+\"Win32_System_TpmBaseS
+ervices\", \"Win32_Syst
+em_UserAccessLogging\",
+ \"Win32_System_Variant
+\", \"Win32_System_Virt
+ualDosMachines\", \"Win
+32_System_WindowsProgra
+mming\", 
+\"Win32_System_Wmi\", 
+\"Win32_UI\", \"Win32_U
+I_Accessibility\", \"Wi
+n32_UI_ColorSystem\", 
+\"Win32_UI_Controls\", 
+\"Win32_UI_Controls_Dia
+logs\", 
+\"Win32_UI_HiDpi\", 
+\"Win32_UI_Input\", \"W
+in32_UI_Input_Ime\", \"
+Win32_UI_Input_Keyboard
+AndMouse\", \"Win32_UI_
+Input_Pointer\", \"Win3
+2_UI_Input_Touch\", \"W
+in32_UI_Input_XboxContr
+oller\", \"Win32_UI_Int
+eractionContext\", \"Wi
+n32_UI_Magnification\",
+ \"Win32_UI_Shell\", \"
+Win32_UI_Shell_Common\"
+, \"Win32_UI_Shell_Prop
+ertiesSystem\", 
+\"Win32_UI_TabletPC\", 
+\"Win32_UI_TextServices
+\", \"Win32_UI_WindowsA
+ndMessaging\", 
+\"Win32_Web\", \"Win32_
+Web_InternetExplorer\",
+ \"default\", 
+\"docs\"))" -C metadata
+=a0fc23bb9f818963 -C ex
+tra-filename=-31ccd588d
+68cb00c --out-dir "C:\U
+sers\Joey\Desktop\Rust 
+apps\letsbuildadatabase
+\database2\target\relea
+se\deps" -C 
+strip=debuginfo -L "dep
+endency=C:\Users\Joey\D
+esktop\Rust apps\letsbu
+ildadatabase\database2\
+target\release\deps" 
+--extern "windows_link=
+C:\Users\Joey\Desktop\R
+ust apps\letsbuildadata
+base\database2\target\r
+elease\deps\libwindows_
+link-4fefee8a36169f3f.r
+meta" --cap-lints 
+allow` (exit code: 1)
+warning: build failed, 
+waiting for other jobs 
+to finish...

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="dashboard.css?v=11">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="dashboard.js?v=21" defer></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Navigator</h2>
+                <p id="db-indicator">Database: <span id="current-db">...</span></p>
+            </div>
+            <nav>
+                <button class="nav-item active" data-view="overview"><span>📊</span> Overview</button>
+                <div class="nav-group">
+                    <label>Actions</label>
+                    <button class="nav-item" data-view="todo"><span>✅</span> To Do</button>
+                    <button class="nav-item" data-view="run-reports"><span>📄</span> Run Reports</button>
+                    <button class="nav-item" data-view="check-tables"><span>📋</span> Check Tables</button>
+                    <button class="nav-item" data-view="sql-runner"><span>⚡</span> SQL Runner (Admin)</button>
+                    <button class="nav-item" data-view="audit-trail"><span>🕰️</span> Audit Trail</button>
+                    <button class="nav-item" disabled><span>📝</span> Forms</button>
+                </div>
+                <div class="nav-group">
+                    <label>Data</label>
+                    <button class="nav-item" id="btn-areas"><span>📂</span> Hierarchy Explorer</button>
+                    <button class="nav-item" id="btn-item-descriptions"><span>🧾</span> Item Descriptions</button>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn">Database selector</button>
+                <button id="shutdown-btn"
+                    style="width: 100%; background: transparent; color: #ff3b30; font-size: 0.9rem; padding: 0.5rem; margin-top: 0.5rem; border: none; cursor: pointer;">Shutdown</button>
+                <button id="theme-toggle"
+                    style="width: 100%; background: transparent; color: var(--text-color); font-size: 0.9rem; padding: 0.5rem; text-align: left; border: none; cursor: pointer;">
+                    🌙 Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <h1 id="view-title">Overview</h1>
+                <div id="loader" class="loader hidden"></div>
+            </header>
+
+            <section id="view-overview" class="view">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <label>Total Items</label>
+                        <p class="value" id="total-items-value">—</p>
+                        <span class="trend" id="total-items-trend">Loading...</span>
+                    </div>
+                    <div class="stat-card">
+                        <label>Active Rooms</label>
+                        <p class="value" id="active-rooms-value">—</p>
+                        <span class="trend" id="active-rooms-trend">Loading...</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <label>Avg Server Ping</label>
+                            <button id="ping-refresh-btn" class="ping-refresh-btn" title="Refresh ping">↻</button>
+                        </div>
+                        <p class="value" id="ping-value">14ms</p>
+                        <span class="trend positive" id="ping-trend">Excellent latency</span>
+                    </div>
+                </div>
+
+                <div class="visuals-grid">
+                    <div class="visual-card">
+                        <h3>Department Area (sqm)</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                    <div class="visual-card">
+                        <h3>To Do List Status</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                    <div class="visual-card">
+                        <h3>Equipment Group Mix</h3>
+                        <canvas id="priorityChart"></canvas>
+                    </div>
+                    <div class="visual-card">
+                        <h3>Equipment Category Mix</h3>
+                        <canvas id="categoryMixChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chart Expansion Modal -->
+            <div id="chart-modal" class="chart-modal hidden">
+                <div class="chart-modal-content">
+                    <div class="chart-modal-header">
+                        <h3 id="chart-modal-title"></h3>
+                        <button id="chart-modal-close" class="chart-modal-close-btn">✕</button>
+                    </div>
+                    <div class="chart-modal-body">
+                        <canvas id="expanded-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Check Tables View -->
+            <section id="view-check-tables" class="view hidden">
+                <div class="cards-grid">
+                    <div class="table-card" data-table="Areaslevel3">
+                        <h3>Areas Level 3</h3>
+                        <p>Top level zoning</p>
+                    </div>
+                    <div class="table-card" data-table="Areaslevel2">
+                        <h3>Areas Level 2</h3>
+                        <p>Departments</p>
+                    </div>
+                    <div class="table-card" data-table="Areaslevel1">
+                        <h3>Areas Level 1</h3>
+                        <p>Sub-Departments</p>
+                    </div>
+                    <div class="table-card" data-table="Room_schedule">
+                        <h3>Room Schedule</h3>
+                        <p>Individual Rooms</p>
+                    </div>
+                    <div class="table-card" data-table="item_schedule">
+                        <h3>Item Schedule</h3>
+                        <p>Equipment & Furniture</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-table" class="view hidden">
+                <div class="table-header-actions">
+                    <div id="breadcrumbs" class="breadcrumbs"></div>
+                    <div class="table-controls">
+
+
+                        <input type="text" id="table-search" placeholder="Search all columns..." class="table-search">
+                        <button id="add-row-btn" class="primary-btn" style="margin-right: 0.5rem; display: none;">+ Add
+                            Row</button>
+                        <button id="refresh-table">Refresh</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="data-table">
+                        <thead id="table-head"></thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="view-todo" class="view hidden">
+                <div class="todo-container">
+                    <div class="todo-input-row">
+                        <input id="todo-input" type="text" placeholder="Add a new task..." class="todo-input" />
+                        <button id="todo-add-btn" class="todo-add-btn">Add</button>
+                    </div>
+                    <ul id="todo-list" class="todo-list"></ul>
+                </div>
+            </section>
+
+            <section id="view-run-reports" class="view hidden">
+                <div class="reports-container">
+                    <h2>Available Reports</h2>
+                    <div class="reports-grid">
+                        <div class="report-card" data-report="bill-of-quantity">
+                            <h3>Bill of Quantity</h3>
+                            <p>Generate a comprehensive list of all equipment and materials with quantities by area or room.</p>
+                        </div>
+                       <!-- <div class="report-card" data-report="cost-analysis">
+                            <h3>Cost Analysis</h3>
+                            <p>Analyze costs by department, area, or equipment type.</p>
+                        </div>
+                        <div class="report-card" data-report="compliance-check">
+                            <h3>Compliance Check</h3>
+                            <p>Verify equipment compliance and standards adherence.</p>
+                        </div>
+                        <div class="report-card" data-report="inventory-summary">
+                            <h3>Inventory Summary</h3>
+                            <p>Overview of current inventory status and availability.</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div id="report-content" class="report-content hidden"></div>
+            </section>
+
+            <section id="view-todo" class="view hidden">
+                <div class="todo-container">
+                    <div class="todo-input-row">
+                        <input id="todo-input" type="text" placeholder="Add a new task..." class="todo-input" />
+                        <button id="todo-add-btn" class="todo-add-btn">Add</button>
+                    </div>
+                    <ul id="todo-list" class="todo-list"></ul>
+                </div>
+            </section>
+
+            <section id="view-sql-runner" class="view hidden">
+                <div class="sql-runner">
+                    <div class="sql-runner-header">
+                        <div>
+                            <h3>SQL Runner</h3>
+                            <p class="text-muted">Running queries on: <strong id="sql-db-name"></strong></p>
+                            <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.25rem;">Admins can run
+                                INSERT/UPDATE/DELETE. Double-check before executing.</p>
+                            <p class="text-muted" style="font-size: 0.85rem; margin-top: 0.25rem; color: #34c759;"><strong>Local tables:</strong> Prefix with <code>#</code> (e.g., <code>#MyTemp</code>)</p>
+                        </div>
+                        <button id="sql-run-btn" class="primary-btn">Run</button>
+                    </div>
+                    <textarea id="sql-input" class="sql-input" rows="6"
+                        placeholder="WRITE ONLY what you intend to change...&#10;Example: UPDATE Room_schedule SET Ignore_Flag='N' WHERE Room_Id='R123';&#10;&#10;For local tables, prefix with #: SELECT * FROM Room_schedule r JOIN #MyTemp t ON r.Room_Id = t.RoomId&#10;&#10;No need to specify database - it uses the currently selected one."></textarea>
+                    <div id="local-table-manager" class="local-table-manager collapsed">
+                        <button id="local-table-toggle" class="local-table-toggle-btn">▼ Local Tables (Temp) - for SQL Runner joins</button>
+                        <div id="local-table-content" class="local-table-content hidden">
+                            <p class="text-muted" style="margin-bottom:0.5rem;">Local tables are created as SQL Server temp tables. Table names are automatically sanitized (spaces become underscores). In SQL queries, reference them with the <code>#</code> prefix. Example: <code>SELECT * FROM Room_schedule rs JOIN #My_Temp t ON rs.Room_Id = t.RoomId</code>.</p>
+                            <p class="text-muted" style="margin-bottom:0.5rem; font-size: 0.85rem;"><strong>Remember:</strong> Always use <code>#TableName</code> in your SQL queries when referencing a local table.</p>
+                        <div class="local-table-row">
+                            <input type="text" id="local-table-name" placeholder="Local table name (alphanumeric _ - will be sanitized)" />
+                        </div>
+                        <div class="local-table-row">
+                            <input type="text" id="local-table-columns" placeholder="Columns e.g. Id INT, Name NVARCHAR(100)" />
+                        </div>
+                        <div class="local-table-row">
+                            <textarea id="local-table-csv" rows="4" placeholder="CSV values (commas) e.g.\n1,Apple\n2,Banana"></textarea>
+                        </div>
+                        <div class="local-table-row" style="display:flex; gap:0.5rem; align-items:center; margin-bottom: 0.5rem;">
+                            <button id="local-table-create" class="secondary-btn">Create/Update Local Table</button>
+                            <button id="local-table-import" class="secondary-btn">Import Excel/CSV file</button>
+                            <input type="file" id="local-table-file" accept=".xlsx,.xls,.csv" style="display:none" />
+                        </div>
+                            <div id="local-table-message" class="info-message"></div>
+                            <div id="local-table-list" class="local-table-list"></div>
+                        </div>
+                    </div>
+                    <div id="sql-result" class="sql-result">Awaiting query…</div>
+                    <div id="sql-table-container" class="sql-table-container hidden">
+                        <table id="sql-results-table" class="data-table">
+                            <thead id="sql-table-head"></thead>
+                            <tbody id="sql-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-audit-trail" class="view hidden">
+                <div class="audit-trail">
+                    <h3>Audit Trail</h3>
+                    <p class="text-muted">All data changes are logged here for compliance and review.</p>
+                    <div class="audit-filters">
+                        <input type="text" id="audit-filter-user" placeholder="Filter by username"
+                            class="audit-filter-input">
+                        <input type="text" id="audit-filter-table" placeholder="Filter by table name"
+                            class="audit-filter-input">
+                        <button id="audit-refresh-btn" class="primary-btn">Refresh</button>
+                    </div>
+                    <div class="audit-table-container">
+                        <table id="audit-table" class="data-table resizable-table">
+                            <thead>
+                                <tr>
+                                    <th class="resizable">Timestamp<span class="resize-handle"></span></th>
+                                    <th class="resizable">User<span class="resize-handle"></span></th>
+                                    <th class="resizable">Database<span class="resize-handle"></span></th>
+                                    <th class="resizable">Table<span class="resize-handle"></span></th>
+                                    <th class="resizable">Operation<span class="resize-handle"></span></th>
+                                    <th class="resizable">Column Changed<span class="resize-handle"></span></th>
+                                    <th class="resizable">Old Value<span class="resize-handle"></span></th>
+                                    <th class="resizable">New Value<span class="resize-handle"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="audit-table-body">
+                                <tr>
+                                    <td colspan="8">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    </div>
+
+    <!-- Add Row Modal -->
+    <div id="add-modal-overlay" class="shutdown-overlay hidden" style="z-index: 300;">
+        <div class="shutdown-card" style="max-width: 600px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="margin: 0;">Add New Item</h2>
+                <button id="add-modal-close"
+                    style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+            </div>
+            <form id="add-row-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <!-- dynamic fields will go here -->
+            </form>
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
+                <button id="add-modal-cancel" class="btn-clear">Cancel</button>
+                <button id="add-modal-save" class="btn-apply">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="local-table-view-modal" class="shutdown-overlay hidden" style="z-index:305;">
+        <div class="shutdown-card" style="max-width: 80%; width: 80%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                <h2 id="local-table-view-title" style="margin:0;">Local Table View</h2>
+                <button id="local-table-view-close" style="background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text-muted);">&times;</button>
+            </div>
+            <div id="local-table-view-body" style="max-height: 60vh; overflow:auto;"></div>
+        </div>
+    </div>
+
+    <div id="shutdown-overlay" class="shutdown-overlay hidden">
+        <div class="shutdown-card">
+            <div class="shutdown-icon">&#128187;</div>
+            <h2>Server shutting down</h2>
+            <p id="shutdown-message">All processes are stopping safely. You can now close this tab.</p>
+            <button id="shutdown-close" class="shutdown-close">Close tab</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

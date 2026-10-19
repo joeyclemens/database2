@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Navigator</h1>
+            <p class="subtitle">Connected to <span>mjm-sql01</span></p>
+        </header>
+
+        <main>
+            <div class="control-panel">
+                <div class="field">
+                    <label for="db-select">Database</label>
+                    <div class="select-wrapper">
+                        <select id="db-select">
+                            <option value="">Loading...</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="connect-btn">Connect</button>
+            </div>
+
+            <div id="status-message" class="status-message"></div>
+        </main>
+
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

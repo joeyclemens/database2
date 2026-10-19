@@ -1,0 +1,14 @@
+.primary-btn {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
